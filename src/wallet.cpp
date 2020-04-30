@@ -1685,7 +1685,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                 CTxDB txdb("r");
                 if (txNew.GetCoinAge(txdb, nCoinAge))
                 {
-                    uint64_t nTotalSize = pcoin.first->vout[pcoin.second].nValue + GetProofOfStakeReward(nCoinAge, nFees);
+                    uint64_t nTotalSize = pcoin.first->vout[pcoin.second].nValue + GetProofOfStakeReward(nHeight, nCoinAge, nFees);
                     if (nTotalSize / 2 > nStakeSplitThreshold * COIN)
                         txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
                 }
@@ -1742,8 +1742,9 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         if (!txNew.GetCoinAge(txdb, nCoinAge))
             return error("CreateCoinStake : failed to calculate coin age");
 
+	int nHeight = pindexPrev->nHeight+1; // height of new block
 
-        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees);
+        int64_t nReward = GetProofOfStakeReward(nHeight, nCoinAge, nFees);
         if (nReward <= 0)
             return false;
 
