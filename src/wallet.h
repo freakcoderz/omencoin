@@ -91,6 +91,7 @@ public:
 
     bool fFileBacked;
     std::string strWalletFile;
+    uint64_t nStakeSplitThreshold;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
