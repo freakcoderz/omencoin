@@ -24,10 +24,10 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 win32{
-BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
-BOOST_THREAD_LIB_SUFFIX=-mgw49-mt-s-1_55
-BOOST_INCLUDE_PATH=/c/demonstration/deps/boost_1_55_0
-BOOST_LIB_PATH=/c/demonstration/deps/boost_1_55_0/stage/lib
+BOOST_LIB_SUFFIX=-mgw49-mt-s-1_47
+BOOST_THREAD_LIB_SUFFIX=-mgw49-mt-s-1_47
+BOOST_INCLUDE_PATH=/c/demonstration/deps/boost_1_47_0
+BOOST_LIB_PATH=/c/demonstration/deps/boost_1_47_0/stage/lib
 BDB_INCLUDE_PATH=/c/demonstration/deps/db-4.8.30.NC/build_unix
 BDB_LIB_PATH=/c/demonstration/deps/db-4.8.30.NC/build_unix
 OPENSSL_INCLUDE_PATH=/c/demonstration/deps/openssl-1.0.1l/include
